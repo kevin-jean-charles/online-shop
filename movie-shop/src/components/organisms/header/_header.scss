@@ -1,0 +1,46 @@
+@import "../../../sass/brands-colors.scss";
+
+.container_global_responsive {
+  margin: 0;
+  header {
+    display: flex;
+    padding: 1em 1em 1.5em 1em;
+    .heading_left {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 2em;
+
+      .subtitle_heading {
+        font-family: "Montserrat";
+        font-weight: 700;
+        text-align: center;
+        padding: 1em 0;
+
+      }
+      .subtext_heading {
+        display: none;
+
+      }
+      .title_heading {
+        font-family: "Montserrat";
+        font-size: 2.7rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-align: center;
+        color: $primary;
+      }
+      .box_call_to_actions {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+
+  }
+}
