@@ -1,0 +1,18 @@
+@import "../../../sass/brands-colors.scss";
+@import "../../../sass/parts/_typography.scss";
+
+.container_global_responsive_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 9999999999;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+  }
+}
