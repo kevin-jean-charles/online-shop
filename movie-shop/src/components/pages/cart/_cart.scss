@@ -1,0 +1,33 @@
+.container_global_cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10em;
+
+  .table_cart,
+  .table_head,
+  .table_d,
+  .table_row {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+    border: 1px solid #333;
+  }
+
+  .table_total {
+    margin-right: 70%;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+  }
+
+  .trash_icon {
+    margin-left: 35%;
+    height: 15px;
+    width: 15px;
+  }
+}

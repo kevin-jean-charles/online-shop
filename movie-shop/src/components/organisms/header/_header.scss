@@ -5,25 +5,30 @@
   header {
     display: flex;
     padding: 1em 1em 1.5em 1em;
+    background-image: url("../../../assets/illustrations/lor.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    height: 700px;
+    width: 100%;
+
     .heading_left {
       height: 100%;
-      width: 100%;
+      width: 30%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-top: 2em;
+      padding-top: 1em;
 
       .subtitle_heading {
         font-family: "Montserrat";
         font-weight: 700;
         text-align: center;
         padding: 1em 0;
-
       }
       .subtext_heading {
         display: none;
-
       }
       .title_heading {
         font-family: "Montserrat";
@@ -41,6 +46,5 @@
         flex-direction: column;
       }
     }
-
   }
 }
