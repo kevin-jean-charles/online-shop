@@ -25,3 +25,4 @@ VALUES ('1003', 'Internet of Things (IoT) - Getting Started', 'Learn IoT', 'asse
 
 INSERT INTO product (barcode, name, description, image_url, active, units_in_stock,unit_price, category_id, date_created)
 VALUES ('1004', 'The Go Programming Language: A to Z', 'Learn Go', 'assets/images/products/placeholder.png', 1, 100, 24.99, 2, NOW());
+ 
