@@ -16,15 +16,15 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 public class DataRestConfig implements RepositoryRestConfigurer {
 
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
-        HttpMethod[] theUnsupportedAction = { HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE };
+        // HttpMethod[] theUnsupportedAction = { HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE };
 
-        config.getExposureConfiguration().forDomainType(Product.class)
-                .withItemExposure((metadata, HttpMethods) -> HttpMethods.disable(theUnsupportedAction))
-                .withCollectionExposure((metadata, HttpMethods) -> HttpMethods.disable(theUnsupportedAction));
+        // config.getExposureConfiguration().forDomainType(Product.class)
+        //         .withItemExposure((metadata, HttpMethods) -> HttpMethods.disable(theUnsupportedAction))
+        //         .withCollectionExposure((metadata, HttpMethods) -> HttpMethods.disable(theUnsupportedAction));
 
-        config.getExposureConfiguration().forDomainType(Category.class)
-                .withItemExposure((metadata, HttpMethods) -> HttpMethods.disable(theUnsupportedAction))
-                .withCollectionExposure((metadata, HttpMethods) -> HttpMethods.disable(theUnsupportedAction));
+        // config.getExposureConfiguration().forDomainType(Category.class)
+        //         .withItemExposure((metadata, HttpMethods) -> HttpMethods.disable(theUnsupportedAction))
+        //         .withCollectionExposure((metadata, HttpMethods) -> HttpMethods.disable(theUnsupportedAction));
 
     }
 
