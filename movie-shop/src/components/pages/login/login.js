@@ -62,48 +62,48 @@ const Login = () => {
     //   };
 
     return (
-            <div className="container_login">
-                <div className="box_form">
-                    <form autoComplete="off">
-                        <h1 className="sub_title">
-                            Connectez-vous avec votre compte adhérent.e.
-                        </h1>
-                        <Input
-                            // reference={inputEmail}
-                            customClass={"input"}
-                            height={"40px"}
-                            width={"90%"}
-                            type={"email"}
-                            id={"email"}
-                            name={"email"}
-                            placeholder={"Email"}
-                            // onChangeMethod={handleSetEmail}
-                        />
-                        <Input
-                            // reference={inputPassword}
-                            customClass={"input mb-2"}
-                            height={"40px"}
-                            width={"90%"}
-                            type={"password"}
-                            id={"password"}
-                            name={"password"}
-                            placeholder={"Mot de passe"}
-                        //   onChangeMethod={handleSetPassword}
-                        />
-                        {/* <span className="reset_password" onClick={goToResetPassword}> */}
-                        Mot de passe oublié ? Cliquez ici
-                        {/* </span> */}
-                        <Button
-                            label={"ME CONNECTER"}
-                            height={"50px"}
-                            width={"90%"}
-                            type={"submit"}
-                            customClass={"btn basic-light-color primary-dark-background"}
-                        //   onClickMethod={handleSubmit}
-                        />
-                    </form>
-                </div>
+        <div className="container_login">
+            <div className="box_form">
+                <form autoComplete="off">
+                    <h1 className="sub_title">
+                        Connectez-vous à votre compte client !
+                    </h1>
+                    <Input
+                        // reference={inputEmail}
+                        customClass={"input"}
+                        height={"40px"}
+                        width={"90%"}
+                        type={"email"}
+                        id={"email"}
+                        name={"email"}
+                        placeholder={"Email"}
+                    // onChangeMethod={handleSetEmail}
+                    />
+                    <Input
+                        // reference={inputPassword}
+                        customClass={"input mb-2"}
+                        height={"40px"}
+                        width={"90%"}
+                        type={"password"}
+                        id={"password"}
+                        name={"password"}
+                        placeholder={"Mot de passe"}
+                    //   onChangeMethod={handleSetPassword}
+                    />
+                    {/* <span className="reset_password" onClick={goToResetPassword}> */}
+                    Mot de passe oublié ? Cliquez ici
+                    {/* </span> */}
+                    <Button
+                        label={"ME CONNECTER"}
+                        height={"50px"}
+                        width={"90%"}
+                        type={"submit"}
+                        customClass={"btn basic-dark-color basic-light-background"}
+                    //   onClickMethod={handleSubmit}
+                    />
+                </form>
             </div>
+        </div>
 
     );
 };
