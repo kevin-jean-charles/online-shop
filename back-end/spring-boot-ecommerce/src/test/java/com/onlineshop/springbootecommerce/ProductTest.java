@@ -1,37 +1,47 @@
 package com.onlineshop.springbootecommerce;
 
+import java.math.BigDecimal;
+
+import com.onlineshop.springbootecommerce.entity.Category;
 import com.onlineshop.springbootecommerce.entity.Product;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class ProductTest {
 
     // declerer un produit
     private Product productTest;
-    // private 
+    private Category categoryTest;
+    private BigDecimal unitPrice;
 
-
-    // setup product test
+    // setup product and category to test
     @BeforeAll
     public void setup() {
+        unitPrice = new BigDecimal(23.5);
+        this.categoryTest = new Category();
         this.productTest = new Product();
+
+        this.categoryTest.setId(1L);
+        this.categoryTest.setCategoryName("categoryNameTest");
+
         this.productTest.setId(1L);
         this.productTest.setActive(true);
-        this.productTest.setBarcode("barcode");
-        // this.productTest.setCategory(category);
-
-        // this.testUser = new User();
-        // this.testUser.setName("Hermione Granger");
-        // this.testUser.setEmail(email);
-        // this.testUser.setHashedpw("somehashedpw");
-        // this.jwt = "somemagicjwt";
-        // mongoClient
-        // .getDatabase(databaseName)
-        // .getCollection("users")
-        // .deleteOne(new Document("email", "log@out.com"));
+        this.productTest.setBarcode("barcodeTest");
+        this.productTest.setCategory(categoryTest);
+        this.productTest.setDescription("descriptionTest");
+        this.productTest.setImageUrl("imageUrlTest");
+        this.productTest.setName("nameTest");
+        this.productTest.setUnitPrice(unitPrice);
+        this.productTest.setUnitsInStock(23);
     }
 
-    // tester creation de produit
+    // tester insersion de produit
+    @Test
+    public void insertionTest() {
+        
+    }
+
 
     // tester recherche de un produit
     // tester recherche de tout les produits
