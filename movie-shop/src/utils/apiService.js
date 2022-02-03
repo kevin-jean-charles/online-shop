@@ -1,14 +1,14 @@
 import api from './api';
 
 export const getUsers = async () => {
-    let users = await api.get(`/users`);
+    let users = await api.get(`/customers`);
     users = users.data;
     console.log("---U-->", users);
     return users.results;
 };
 
 export const getUser = async (id) => {
-    let user = await api.get(`/users/${id}`);
+    let user = await api.get(`/customers/${id}`);
     user = user.data;
     console.log("---P-->", user);
     return user.results;
@@ -36,7 +36,7 @@ export const getCategories = async () => {
 }
 
 export const getCategorie = async (id) => {
-    let categorie = await api.get(`/categories/${id}`);
+    let categorie = await api.get(`/category/${id}`);
     categorie = categorie.data;
     console.log("---Categorie-->", categorie);
     return categorie.results;
