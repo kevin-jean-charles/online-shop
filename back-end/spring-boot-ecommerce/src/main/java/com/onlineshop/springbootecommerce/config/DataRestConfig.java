@@ -1,12 +1,8 @@
 package com.onlineshop.springbootecommerce.config;
 
-import com.onlineshop.springbootecommerce.entity.Product;
-import com.onlineshop.springbootecommerce.entity.Category;
-
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
-import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 /**
@@ -17,10 +13,11 @@ public class DataRestConfig implements RepositoryRestConfigurer {
 
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 
-        cors.addMapping("/*")
-                .allowedOrigins("*")
+        cors.addMapping("/api/**")
+                .allowedOrigins("http://localhost:3000")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowCredentials(false).maxAge(3600);
+                .allowCredentials(true).maxAge(3600);
+
         // HttpMethod[] theUnsupportedAction = { HttpMethod.PUT, HttpMethod.POST,
         // HttpMethod.DELETE };
 
