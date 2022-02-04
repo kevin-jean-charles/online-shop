@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getCategories } from "../../../utils/apiService";
 // import { useSelector } from "react-redux";
 
 import cart from "./../../../assets/icons/shopping-cart-solid.svg";
@@ -9,6 +10,19 @@ import "./_navigation.scss";
 // import Button from "../../atoms/Button/button";
 
 const Nav = () => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        const getCat = async () => {
+            try {
+                let categories = await getCategories();
+                setCategories(categories);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        getCat();
+    }, []);
     // const appState = useSelector((state) => state);
     // const items = appState.items.items.values;
     // const [open, setOpen] = useState(true);
@@ -42,37 +56,27 @@ const Nav = () => {
 
     return (
         <div className="container_global_responsive_nav">
-          
+
             <nav className="shadow">
                 <Link to="/">
-                <div className="box_logo">
-                    <img src={icon} alt="logo" />
-                </div>
-            </Link>
+                    <div className="box_logo">
+                        <img src={icon} alt="logo" />
+                    </div>
+                </Link>
                 <form>
-                    <label>DVD</label>
+                    <label>PRODUITS</label>
                     <select>
-                        <option value="">
-                            <Link to="/items/:cat">
-                                <h2>LES FILMS</h2>
-                            </Link>
-                        </option>
+                        {categories ? categories.map((categories) => {
+                            return (
+                                <option value="">
+                                    <Link to="/items/:cat">
+                                        <h2>{categories}</h2>
+                                    </Link>
+                                </option>
+                            );
+                        }) : null}
                     </select>
-                    <select>
-                        <option value="LES ANIMES">
-                            <Link to="/items/:cat">
-                                <h2>LES ANIMES</h2>
-                            </Link>
-                        </option>
-                    </select>
-                    <select>
-                        <option value="LES DOCUMENTAIRES">
-                            <Link to="/items/:cat">
-                                <h2>LES DOCUMENTAIRES</h2>
-                            </Link>
-                        </option>
-                    </select>
-                </form>
+                </form >
                 <Link to="/login">
                     <h2>CONNEXION</h2>
                 </Link>
@@ -80,8 +84,8 @@ const Nav = () => {
                     <h2 className="cart">PANIER
                         <img src={cart} alt="icon-cart" /></h2>
                 </Link>
-            </nav>
-        </div>
+            </nav >
+        </div >
     );
 };
 
