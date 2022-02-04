@@ -4,7 +4,6 @@ import com.onlineshop.springbootecommerce.dto.Purchase;
 import com.onlineshop.springbootecommerce.dto.PurchaseResponse;
 import com.onlineshop.springbootecommerce.service.CheckoutService;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

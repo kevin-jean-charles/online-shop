@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class CheckoutServiceImpl implements CheckoutService {
 
     private CustomerRepository customerRepository;
+    
 
     @Autowired
     public CheckoutServiceImpl(CustomerRepository customerRepository) {
@@ -39,6 +40,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         order.setShippingAddress(purchase.getShippingAddress());
 
         Customer customer = purchase.getCustomer();
+        customer.add(order);
         customerRepository.save(customer);
 
         return new PurchaseResponse(orderTrackingNumber);
