@@ -16,28 +16,28 @@ export const getUser = async (id) => {
 
 export const getProducts = async () => {
     let products = await api.get(`/products`);
-    products = products.data;
+    products = products.data._embedded.products;
     console.log("---Prod-->", products);
-    return products.results;
+    return products;
 }
 
-export const getProduct = async (id) => {
-    let product = await api.get(`/products/${id}`);
-    product = product.data;
-    console.log("---Product-->", product);
-    return product.results;
-}
+// export const getProduct = async (id) => {
+//     let product = await api.get(`/products/${id}`);
+//     product = product.data;
+//     console.log("---Product-->", product);
+//     return product.results;
+// }
 
 export const getCategories = async () => {
     let categories = await api.get(`/categories`);
-    categories = categories.data;
-    console.log("---C-->", categories);
-    return categories.results;
+    categories = categories.data._embedded.categories;
+    console.log("---C--->", categories);
+    return categories;
 }
 
 export const getCategorie = async (id) => {
     let categorie = await api.get(`/category/${id}`);
-    categorie = categorie.data;
+    categorie = categorie.data._embedded.categorie;
     console.log("---Categorie-->", categorie);
     return categorie.results;
 }

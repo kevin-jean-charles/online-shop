@@ -1,0 +1,26 @@
+.overview-items {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 3em;
+  width: 100%;
+}
+
+.overview {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 3em;
+  width: 100%;
+}
+
+.text-overview {
+  margin: 1em;
+  width: 100%;
+}
+
+img {
+  height: 150px;
+  width: 100px;
+}

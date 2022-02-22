@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getCategories } from "../../../utils/apiService";
 // import { useSelector } from "react-redux";
 
@@ -11,11 +11,13 @@ import "./_navigation.scss";
 
 const Nav = () => {
     const [categories, setCategories] = useState([]);
+    let navigate = useNavigate();
 
     useEffect(() => {
         const getCat = async () => {
             try {
                 let categories = await getCategories();
+                console.log(categories);
                 setCategories(categories);
             } catch (e) {
                 console.log(e);
@@ -23,36 +25,10 @@ const Nav = () => {
         }
         getCat();
     }, []);
-    // const appState = useSelector((state) => state);
-    // const items = appState.items.items.values;
-    // const [open, setOpen] = useState(true);
-    // const [heightNav, setHeightNav] = useState("0%");
 
-    // const toggleNav = () => {
-    //     setOpen(!open);
-    //     if (open === true) {
-    //         setHeightNav("100%");
-    //     } else {
-    //         setHeightNav("0%");
-    //     }
-    // };
-
-    // const setOpenNav = () => {
-    //     setOpen(true);
-    //     toggleNav();
-    // };
-
-    // const handleLogout = async () => {
-    //     await api.post("/logout");
-    //     window.location.reload();
-    // };
-
-    // const scrollToTop = () => {
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: "smooth",
-    //     });
-    // };
+    const goToCategoryPage = (link) => {
+        return navigate(`/items/category/${link}`)
+    };
 
     return (
         <div className="container_global_responsive_nav">
@@ -64,14 +40,13 @@ const Nav = () => {
                     </div>
                 </Link>
                 <form>
-                    <label>PRODUITS</label>
-                    <select>
-                        {categories ? categories.map((categories) => {
+                    <select onChange={(e) => goToCategoryPage(e.target.value)}>
+                        <option value="Produits">Produits</option>
+                        {categories ? categories.map((categorie, index) => {
+                            console.log(categorie.categoryName);
                             return (
-                                <option value="">
-                                    <Link to="/items/:cat">
-                                        <h2>{categories}</h2>
-                                    </Link>
+                                <option key={index} values={categorie.categoryName}>
+                                    {categorie.categoryName}
                                 </option>
                             );
                         }) : null}

@@ -7,23 +7,23 @@ import "./_item.scss";
 
 
 function Item() {
-    const [item, setItem] = useState([]);
+    // const [item, setItem] = useState([]);
 
-    useEffect(() => {
-        const getItem = async () => {
-            try {
-                let item = await getProduct();
-                setItem(item);
-            } catch (e) {
-                console.log(e);
-            }
-        }
-        getItem();
-    }, []);
+    // useEffect(() => {
+    //     const getItem = async () => {
+    //         try {
+    //             let item = await getProduct();
+    //             setItem(item);
+    //         } catch (e) {
+    //             console.log(e);
+    //         }
+    //     }
+    //     getItem();
+    // }, []);
     return (
         <div>
             <div className="overview-item">
-                {item ? item.map((item) => {
+                {/* {item ? item.map((item) => {
                     return (
                         <li className="overview">
                             <h1 className="title-overview"> Produit </h1>
@@ -33,7 +33,7 @@ function Item() {
 
                         </li>
                     );
-                }) : null}
+                }) : null} */}
             </div>
         </div>
     );

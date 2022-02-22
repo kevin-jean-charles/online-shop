@@ -16,6 +16,7 @@ function Items() {
         const getItems = async () => {
             try {
                 let items = await getProducts();
+                console.log(items);
                 setItems(items);
             } catch (e) {
                 console.log(e);
@@ -27,13 +28,15 @@ function Items() {
 
     return (
         <div>
+            <h1 className="title-overview"> Produits </h1>
             <div className="overview-items">
-                {items ? items.map((items) => {
+
+                {items ? items.map((items, index) => {
                     return (
-                        <li className="overview">
-                            <h1 className="title-overview"> Produits </h1>
+                        <li key={index} className="overview">
+                            <img src={items.imageUrl} alt="" />
                             <div className="text-overview">
-                                {items}
+                                {items.name}
                             </div>
 
                         </li>
