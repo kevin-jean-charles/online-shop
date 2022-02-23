@@ -43,7 +43,6 @@ const Nav = () => {
                     <select onChange={(e) => goToCategoryPage(e.target.value)}>
                         <option value="Produits">Produits</option>
                         {categories ? categories.map((categorie, index) => {
-                            console.log(categorie.categoryName);
                             return (
                                 <option key={index} values={categorie.categoryName}>
                                     {categorie.categoryName}

@@ -21,12 +21,12 @@ export const getProducts = async () => {
     return products;
 }
 
-// export const getProduct = async (id) => {
-//     let product = await api.get(`/products/${id}`);
-//     product = product.data;
-//     console.log("---Product-->", product);
-//     return product.results;
-// }
+export const getProduct = async (id) => {
+    let product = await api.get(`/products/${id}`);
+    product = product.data;
+    console.log("---Product-->", product);
+    return product.results;
+}
 
 export const getCategories = async () => {
     let categories = await api.get(`/categories`);
@@ -35,11 +35,11 @@ export const getCategories = async () => {
     return categories;
 }
 
-export const getCategorie = async (id) => {
-    let categorie = await api.get(`/category/${id}`);
-    categorie = categorie.data._embedded.categorie;
-    console.log("---Categorie-->", categorie);
-    return categorie.results;
+export const getCategory = async (id) => {
+    let category = await api.get(`/category/${id}`);
+    category = category.data._embedded.categorie;
+    console.log("---Categorie-->", category);
+    return category.results;
 }
 
 export const getOrders = async () => {

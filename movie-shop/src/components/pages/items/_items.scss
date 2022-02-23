@@ -1,23 +1,40 @@
+.global-container {
+  margin-top: 2em;
+}
 .overview-items {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 3em;
+  margin-top: 3em;
   width: 100%;
 }
 
 .overview {
   display: flex;
   flex-wrap: nowrap;
-  margin: 3em;
+  background: #f4f2f2bd;
+  border: 1px solid black;
+  padding: 1em;
+  margin: 1em;
   width: 100%;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.overview:hover {
+  transform: scale(1.2);
 }
 
 .text-overview {
   margin: 1em;
   width: 100%;
+}
+.price-overview {
+  margin: 1em;
+  width: 100%;
+  font-style: bold;
 }
 
 img {
