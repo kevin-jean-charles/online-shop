@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `online-shop`.`product` (
   `image_url` VARCHAR(255) DEFAULT NULL,
   `active` BIT DEFAULT 1,
   `units_in_stock` INT(11) DEFAULT NULL,
-   `date_created` DATETIME(6) DEFAULT NULL,
+  `date_created` DATETIME(6) DEFAULT NULL,
   `last_updated` DATETIME(6) DEFAULT NULL,
   `category_id` BIGINT(20) NOT NULL,
   PRIMARY KEY (`id`),
@@ -101,3 +101,25 @@ CREATE TABLE `order_item` (
   CONSTRAINT `FK_order_id` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
   CONSTRAINT `FK_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `online-shop`.`country`
+-- -----------------------------------------------------
+CREATE TABLE `country` (
+  `id` smallint unsigned NOT NULL,
+  `code` varchar(2) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- -----------------------------------------------------
+-- Table `online-shop`.`state`
+-- -----------------------------------------------------
+CREATE TABLE `state` (
+  `id` smallint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `country_id` smallint unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_country` (`country_id`),
+  CONSTRAINT `fk_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1;
